@@ -1,0 +1,3 @@
+[submodule "graphql_api"]
+	path = graphql_api
+	url = https://github.com/GSCrawley/graphql_api.git
