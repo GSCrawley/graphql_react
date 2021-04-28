@@ -11,8 +11,11 @@ function Weather() {
             query: gql`
               query {
                 getWeather(zip:${zip}) {
-                  temperature
-                  description
+                    name
+                    temperature
+                    description
+                  
+
                 }
               }
             `
@@ -25,22 +28,20 @@ function Weather() {
     return (
       <div className="Weather">
 
-        {weather ? <h1>{weather.data.getWeather.temperature}</h1>: null}
+        {weather ? <h1>{weather.data.getWeather.name}, {weather.data.getWeather.temperature}, {weather.data.getWeather.description}</h1>: null}
 
         <form onSubmit={(e) => {
             e.preventDefault()
             getWeather()
-            }}>
-                <input 
-                value={zip}
-                onChange={(e) => setZip(e.target.value)}
+        }}>
+            <input 
+            value={zip}
+            onChange={(e) => setZip(e.target.value)}
             />
             <button type="submit">Submit</button>
         </form>
       </div>
     );
-    
-    
   }
   
   export default Weather

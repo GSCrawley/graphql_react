@@ -1,6 +1,9 @@
 # this project uses CORS to interact between servers
 ### Cross-Origin Resource Sharing is a mechanism that uses additional HTTP headers. It uses these headers to tell a browser to let a web application running at one origin have permission to access selected resources from a server at a different origin.
 
+### query returning the following error message: "Cannot return null for non-nullable field Weather.temperature"
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
