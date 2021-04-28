@@ -1,0 +1,18 @@
+
+.Weather {
+    width: auto;
+    height: 570px;
+    margin-top: 4rem;
+    background-image: radial-gradient(ellipse at center, rgba(180,221,180,1) 0%,rgba(82,177,82,1) 33%,rgba(0,87,0,1) 66%,rgba(0,87,0,1) 66%,rgba(0,138,0,1) 67%,rgba(0,36,0,1) 100%); 
+}
+
+form {
+}
+
+.form {
+    padding-top: 16rem;
+}
+
+.h1 {
+    padding-top: 10rem;
+}

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { gql } from '@apollo/client'
 import { client } from './index'
+import './Weather.css'
 
 function Weather() {
     const [ zip, setZip ] = useState('')
@@ -14,8 +15,9 @@ function Weather() {
                     name
                     temperature
                     description
-                  
-
+                    temp_max
+                    temp_min
+                    feels_like
                 }
               }
             `
@@ -28,9 +30,10 @@ function Weather() {
     return (
       <div className="Weather">
 
-        {weather ? <h1>{weather.data.getWeather.name}, {weather.data.getWeather.temperature}, {weather.data.getWeather.description}</h1>: null}
+        {weather ? <h1>{weather.data.getWeather.name} <br />{weather.data.getWeather.description}<br />{weather.data.getWeather.temperature+"•C"}<br />{"High of "+ weather.data.getWeather.temp_max+"•C"}<br />{"Low of " + weather.data.getWeather.tenp_min+"•C"}<br />{"Feels like "+ weather.data.getWeather.feels_like+"•C"}</h1>: null}
 
-        <form onSubmit={(e) => {
+        <div class = "form">
+            <form onSubmit={(e) => {
             e.preventDefault()
             getWeather()
         }}>
@@ -39,7 +42,8 @@ function Weather() {
             onChange={(e) => setZip(e.target.value)}
             />
             <button type="submit">Submit</button>
-        </form>
+            </form>
+        </div>
       </div>
     );
   }
