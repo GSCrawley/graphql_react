@@ -31,12 +31,14 @@ function Weather() {
       <div className="Weather">
 
         {weather ? <h1>{weather.data.getWeather.name} <br />{weather.data.getWeather.description}<br />{weather.data.getWeather.temperature+"•C"}<br />{"High of "+ weather.data.getWeather.temp_max+"•C"}<br />{"Low of " + weather.data.getWeather.tenp_min+"•C"}<br />{"Feels like "+ weather.data.getWeather.feels_like+"•C"}</h1>: null}
+        <h1>Please enter a 5-digit zip</h1>
 
         <div class = "form">
             <form onSubmit={(e) => {
             e.preventDefault()
             getWeather()
         }}>
+
             <input 
             value={zip}
             onChange={(e) => setZip(e.target.value)}
